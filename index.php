@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     } else {
         $name = check_data($_POST["name"]);
     }
-    if(empty($_POST["email"])){
+    if(empty($_POST["password"])){
         $passErr = "Campo Mancante";
     } else {
         $password = check_data($_POST["name"]);
