@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     } else {
         $name = check_data($_POST["name"]);
     }
-    if(empty($_POST["password"])){
+    if(empty($_POST["email"])){
         $passErr = "Campo Mancante";
     } else {
         $password = check_data($_POST["name"]);
@@ -51,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     <br><br>
     Password: <input type="text" name="email" value="<?php echo $password ?>"> <span class="errore"> <?php echo $passErr ?></span>
     <br><br>
+    <button type="button">Invia</button>
 </form>
 
 </body>
