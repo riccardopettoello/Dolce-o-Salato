@@ -18,10 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     } else {
         $name = check_data($_POST["name"]);
     }
-    if(empty($_POST["email"])){
+    if(empty($_POST["password"])){
         $passErr = "Campo Mancante";
     } else {
-        $password = check_data($_POST["name"]);
+        $password = check_data($_POST["password"]);
     }
 
     if($name != "" && $password != "" ){
@@ -47,11 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <h2>PHP Form Validation</h2>
 <form method="post">
-    Name: <input type="text" name="name" value="<?php echo $name ?>"> <span class="errore"> <?php echo $nameErr ?> </span>
+    Name: <input type="text" id="name" name="name" value="<?php echo $name ?>"> <span class="errore"> <?php echo $nameErr ?> </span>
     <br><br>
-    Password: <input type="text" name="email" value="<?php echo $password ?>"> <span class="errore"> <?php echo $passErr ?></span>
+    Password: <input type="password" id="password" name="password" value="<?php echo $password ?>"> <span class="errore"> <?php echo $passErr ?></span>
     <br><br>
-    <button type="button">Invia</button>
+    <input type="submit" value="ACCEDI"></input>
 </form>
 
 </body>
