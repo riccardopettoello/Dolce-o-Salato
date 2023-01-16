@@ -1,59 +1,37 @@
 <?php
-session_start();  
 
-//Funzione per il controllo dei dati inseriti
-function check_data ($temp){
-    $temp = trim($temp);
-    $temp = stripslashes($temp);
-    $temp = htmlspecialchars($temp);
-    return $temp;
-}
+session_start();
 
-$nameErr = $passErr = "";
-$name = $password = "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-    if(empty($_POST["name"])){
-        $nameErr = "Campo Mancante";
-    } else {
-        $name = check_data($_POST["name"]);
-    }
-    if(empty($_POST["password"])){
-        $passErr = "Campo Mancante";
-    } else {
-        $password = check_data($_POST["password"]);
-    }
-
-    if($name != "" && $password != "" ){
-        $_SESSION = $_POST;
-        header("Location: pagina2.php");
-    }
-
+if(!isset($_SESSION['auth'])){
+    header("Location:login.php");
 }
 
 ?>
 
-<html>
+<html lang="it">
 <head>
-
-    <style>
-        .errore{
-            color: red;
-        }
-    </style>
+    <title>Secure Login</title>
 </head>
-
 <body>
+    <h1>INDEX</h1>
 
-<h2>PHP Form Validation</h2>
-<form method="post">
-    Name: <input type="text" id="name" name="name" value="<?php echo $name ?>"> <span class="errore"> <?php echo $nameErr ?> </span>
-    <br><br>
-    Password: <input type="password" id="password" name="password" value="<?php echo $password ?>"> <span class="errore"> <?php echo $passErr ?></span>
-    <br><br>
-    <input type="submit" value="ACCEDI"></input>
-</form>
+    <p>Benvenuto!</p>
+    <p>Stiamo raccogliendo sulle preferenze delle persone, riguardo
+        il cibo dolce o salato.
+        <b>Esprimi la tua opinione!</b></p>
 
+    <form action="">
+        <label for="scelta">Scelta: </label>
+        <label>
+            <select name="Dolce o salato">
+                <option value="dolce">Dolce</option>
+                <option value="salato">Salato</option>
+            </select>
+        </label>
+        <input type="submit" value="Invia Preferenza">
+    </form>
+
+    <a href="logout.php" >LOGOUT</a>
 </body>
 
 </html>
