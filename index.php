@@ -24,14 +24,6 @@ if(!isset($_SESSION['auth'])){
         <b>Esprimi la tua opinione!</b></p>
 
     <form action="AddScelta.php" method="post">
-        <div>
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome" required placeholder="Mario">
-        </div>
-        <div>
-            <label for="cognome">Cognome</label>
-            <input type="text" name="cognome" id="cognome" required placeholder="Rossi">
-        </div>
         <label for="scelta">Inserisci la tua preferenza:</label>
         <select name="scelta" id="scelta">
             <?php foreach ($scelte as $scelta): ?>
