@@ -1,5 +1,5 @@
 <?php
-session_start();   prova
+session_start();  
 
 //Funzione per il controllo dei dati inseriti
 function check_data ($temp){
