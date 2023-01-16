@@ -28,7 +28,6 @@ if(!isset($_SESSION['auth'])){
                 <option value="salato">Salato</option>
             </select>
         </label>
-        <input type="submit" value="Invia Preferenza">
     </form>
 
     <a href="logout.php" >LOGOUT</a>
