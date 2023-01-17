@@ -1,21 +1,20 @@
 <?php
 
+session_start();
+
+if(!isset($_SESSION['auth'])){
+    header("Location:login.php");
+}
+
 ?>
-
-<HTML !DOCTYPE>
-
-<html>
+<!DOCTYPE html>
+<html lang="it">
 <head>
-
-    <style>
-        .errore{
-            color: red;
-        }
-    </style>
+    <title>Dolce o Salato?</title>
 </head>
-
 <body>
-        
+    <p>Grazie per aver partecipato al sondaggio!</p>
+    <a href="logout.php" >LOGOUT</a>
 </body>
 
 </html>
