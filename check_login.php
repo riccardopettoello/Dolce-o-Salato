@@ -24,3 +24,13 @@ if (isset($pws[0]["pws"])){
         header("Location:login.php");
     }
 }
+if (isset($pws[1]["pws"])){
+    if (password_verify($usr_pws,$pws[1]["pws"])){
+        unset($_SESSION['login_error']);
+        $_SESSION['auth'] = true;
+        header("Location:pagina3.php");
+    } else {
+        $_SESSION['login_error'] = true;
+        header("Location:login.php");
+    }
+}
