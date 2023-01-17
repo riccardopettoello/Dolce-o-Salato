@@ -97,11 +97,11 @@ if($name != "" && $cognome != "") {
     <form action="AddScelta.php" method="post">
         <div>
             <label>Nome </label>
-            <input type="text" name="name" value="<?php echo $name ?>"> <span class="errore"> <?php echo $nameErr ?> </span>
+            <input type="text" name="name" value="<?php echo $name ?>" required> <span class="errore"> <?php echo $nameErr ?> </span>
         </div>
         <div>
             <label>Cognome </label>
-            <input type="text" name="cognome" value="<?php echo $cognome ?>"> <span class="errore"> <?php echo $cognomeErr ?> </span>
+            <input type="text" name="cognome" value="<?php echo $cognome ?>" required> <span class="errore"> <?php echo $cognomeErr ?> </span>
         </div>
         <label for="scelta">Inserisci la tua preferenza:</label>
         <select name="scelta" id="scelta">
