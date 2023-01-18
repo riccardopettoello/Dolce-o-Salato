@@ -29,37 +29,54 @@ if(!isset($_SESSION['auth'])){
 <html lang="it">
 <head>
     <title>Dolce o Salato?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+        p{
+            text-align: center;
+            font-style: italic;
+            font-size: 25px;
+        }
+        
+        div{
+            margin: 25px; 
+        } 
+    </style>
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <body>
+    <br>
     <p>Grazie per aver partecipato al sondaggio!</p>
 
     <div>
-        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        <div>
+            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+        
+            <script>
+                var xValues = ["Dolce", "Salato"];
+                var yValues = ["<?php echo $dolce ?>", "<?php echo $salato ?>", 30];
+                var barColors = ["red", "green"];
 
-        <script>
-            var xValues = ["Dolce", "Salato"];
-            var yValues = ["<?php echo $dolce ?>", "<?php echo $salato ?>", 30];
-            var barColors = ["red", "green"];
-
-            new Chart("myChart", {
-                type: "bar",
-                data: {
-                    labels: xValues,
-                    datasets: [{
-                        backgroundColor: barColors,
-                        data: yValues
-                    }]
-                },
-                options: {
-                    legend: {display: false},
-                    title: {
-                        display: true,
-                        text: "Preferenze tra dolce e salato"
+                new Chart("myChart", {
+                    type: "bar",
+                    data: {
+                        labels: xValues,
+                        datasets: [{
+                            backgroundColor: barColors,
+                            data: yValues
+                        }]
+                    },
+                    options: {
+                        legend: {display: false},
+                        title: {
+                            display: true,
+                            text: "Preferenze tra dolce e salato"
+                        }
                     }
-                }
-            });
-        </script>
+                });
+            </script>
+        </div>    
+        <br>
         <a href="logout.php" >LOGOUT</a>
     </div>
 </body>
