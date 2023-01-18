@@ -29,17 +29,31 @@ if(!isset($_SESSION['auth'])){
 <html lang="it">
 <head>
     <title>Dolce o Salato? - ADMIN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
     <style>
+        
         table, th, td {
             border: 1px solid black;
         }
+        .p{
+            text-align: center;
+            font-style: italic;
+            font-size: 25px;
+        }
+        div{
+            margin: 25px; 
+        } 
+        
     </style>
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <body>
-<p>Benvenuto nella schermata di admin</p>
+<br>
+<p class="p">Benvenuto nella schermata di admin</p>
 
 <div>
+    
     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
     <script>
@@ -62,11 +76,12 @@ if(!isset($_SESSION['auth'])){
                     display: true,
                     text: "Preferenze tra dolce e salato"
                 }
-            }
+             }
         });
     </script>
-
-    <table>
+    
+    <br>
+    <table class="table">
         <tr>
             <th>Nome</th>
             <th>Cognome</th>
