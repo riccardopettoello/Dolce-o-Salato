@@ -43,40 +43,19 @@ if(!isset($_SESSION['auth'])){
         } 
     </style>
 </head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <body>
-    <br>
-    <p>Grazie per aver partecipato al sondaggio!</p>
-
     <div>
-        <div>
-            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-        
-            <script>
-                var xValues = ["Dolce", "Salato"];
-                var yValues = ["<?php echo $dolce ?>", "<?php echo $salato ?>", 30];
-                var barColors = ["red", "green"];
-
-                new Chart("myChart", {
-                    type: "bar",
-                    data: {
-                        labels: xValues,
-                        datasets: [{
-                            backgroundColor: barColors,
-                            data: yValues
-                        }]
-                    },
-                    options: {
-                        legend: {display: false},
-                        title: {
-                            display: true,
-                            text: "Preferenze tra dolce e salato"
-                        }
-                    }
-                });
-            </script>
-        </div>    
         <br>
+        <p>Grazie per aver partecipato al sondaggio!</p>
+        <br>
+    </div>
+    <div>
+        <p>Ecco le preferenze degli altri utenti</p>
+    </div>
+    <div>
+        <iframe src="grafico.php" frameborder="0" width="500px" height="500px"></iframe>
+    </div>
+    <div>
         <a href="logout.php" >LOGOUT</a>
     </div>
 </body>

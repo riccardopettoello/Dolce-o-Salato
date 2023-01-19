@@ -47,39 +47,11 @@ if(!isset($_SESSION['auth'])){
         
     </style>
 </head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <body>
 <br>
 <p class="p">Benvenuto nella schermata di admin</p>
-
+<iframe src="grafico.php" frameborder="0" width="500px" height="500px"></iframe>
 <div>
-    
-    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-
-    <script>
-        var xValues = ["Dolce", "Salato"];
-        var yValues = ["<?php echo $dolce ?>", "<?php echo $salato ?>", 30];
-        var barColors = ["red", "green"];
-
-        new Chart("myChart", {
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                    backgroundColor: barColors,
-                    data: yValues
-                }]
-            },
-            options: {
-                legend: {display: false},
-                title: {
-                    display: true,
-                    text: "Preferenze tra dolce e salato"
-                }
-             }
-        });
-    </script>
-    
     <br>
     <table class="table">
         <tr>
